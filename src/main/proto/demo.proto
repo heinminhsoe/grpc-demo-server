@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package hms;
+
+option java_package = "com.hms.grcp";
+option java_outer_classname = "EmployeeGrpcSerice";
+option java_multiple_files = true;
+
+service EmployeeSerice {
+  rpc Employee(EmployeeRequest) returns (EmployeeResponse) {}
+}
+
+message EmployeeRequest {
+  string name = 1;
+  string passport =  2;
+  int32 age = 3;
+}
+
+message EmployeeResponse {
+  int64 id = 1;
+  string name = 2;
+  string passport =  3;
+  int32 age = 4;
+}
